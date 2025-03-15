@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: internet-banking
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: ib
+  template:
+    metadata: 
+      labels:
+        app: ib
+    spec:
+      containers:
+        - name: internet-banking-pod
+          image:  nginx
+          ports:
+            - containerPort: 80
+          resources:
+            limits:
+              cpu: 100m
+              memory: 256Mi
+            requests:
+              cpu: 50m
+              memory: 128Mi

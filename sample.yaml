@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: core-bancario
+spec:
+  replicas: 5
+  selector:
+    matchLabels:
+      app: bank
+  template:
+    metadata: 
+      labels:
+        app: bank
+    spec:
+      containers:
+        - name: core-bancario-pod
+          image:  nginx
+          ports:
+            - containerPort: 80
+          resources:
+            limits:
+              cpu: 100m
+              memory: 256Mi
+            requests:
+              cpu: 50m
+              memory: 128Mi
