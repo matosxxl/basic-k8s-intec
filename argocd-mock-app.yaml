@@ -8,7 +8,7 @@ spec:
   source:
     repoURL: https://github.com/matosxxl/basic-k8s-intec # Repositorio Git que observara ArgoCD
     targetRevision: master  # Rama a revisar por cambios
-    path: "."  # Ubicacion del repo donde se alojan los manifiestos (archivos de kubernetes)
+    path: "./manifests"  # Ubicacion del repo donde se alojan los manifiestos (archivos de kubernetes)
   destination:
     server: https://kubernetes.default.svc  # Ubicacion por defecto de la API de Kubernetes
     namespace: default  # Namespace donde desplegaremos la aplicacion
